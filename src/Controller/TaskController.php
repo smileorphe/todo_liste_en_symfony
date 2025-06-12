@@ -6,6 +6,7 @@ use App\Entity\Task;
 use App\Entity\TaskPriority;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -111,7 +112,7 @@ class TaskController extends AbstractController
         ]);
     }
 
-    #[Route('/task/{id}/edit', name: 'app_task_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/edit', name: 'app_task_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Task $task, EntityManagerInterface $entityManager): Response
     {
         // Vérifier que l'utilisateur a le droit de modifier cette tâche

@@ -46,9 +46,9 @@ class TaskType extends AbstractType
             ->add('priority', ChoiceType::class, [
                 'label' => 'Priorité',
                 'choices' => [
-                    'Basse' => TaskPriority::LOW->value,
-                    'Moyenne' => TaskPriority::MEDIUM->value,
-                    'Haute' => TaskPriority::HIGH->value,
+                    'Basse' => 'Basse',
+                    'Moyenne' => 'Moyenne',
+                    'Haute' => 'Haute',
                 ],
                 'expanded' => false,
                 'multiple' => false,

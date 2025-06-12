@@ -34,9 +34,7 @@
                     <option value="">Toutes</option>
                     {% for priority in priorities %}
                         <option value="{{ priority }}" {% if filters.priority == priority %}selected{% endif %}>
-                            {% if priority == 'basse' %}Basse{% endif %}
-                            {% if priority == 'moyenne' %}Moyenne{% endif %}
-                            {% if priority == 'haute' %}Haute{% endif %}
+                            {{ priority }}
                         </option>
                     {% endfor %}
                 </select>
@@ -122,10 +120,10 @@
                         {% endif %}
                         
                         <div class="mt-3">
-                            <span class="badge {% if task.priority == 'basse' %}bg-success{% elseif task.priority == 'moyenne' %}bg-warning{% else %}bg-danger{% endif %}">
-                                {% if task.priority == 'basse' %}
+                            <span class="badge {% if task.priority == 'Basse' %}bg-success{% elseif task.priority == 'Moyenne' %}bg-warning{% else %}bg-danger{% endif %}">
+                                {% if task.priority == 'Basse' %}
                                     <i class="fas fa-arrow-down me-1"></i>Basse
-                                {% elseif task.priority == 'moyenne' %}
+                                {% elseif task.priority == 'Moyenne' %}
                                     <i class="fas fa-minus me-1"></i>Moyenne
                                 {% else %}
                                     <i class="fas fa-arrow-up me-1"></i>Haute

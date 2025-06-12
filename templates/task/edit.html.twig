@@ -22,7 +22,8 @@
         <h5 class="mb-0">Modifier la tâche</h5>
     </div>
     <div class="card-body">
-        {{ form_start(form) }}
+        {{ form_start(form, {'method': 'POST'}) }}
+        {{ form_widget(form._token) }}
             <div class="row">
                 <div class="col-md-12 mb-3">
                     {{ form_label(form.title, null, {'label_attr': {'class': 'form-label'}}) }}

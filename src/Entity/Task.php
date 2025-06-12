@@ -111,10 +111,14 @@ class Task
         return $this->priority;
     }
 
+    public function getPriorityEnum(): ?TaskPriority
+    {
+        return TaskPriority::tryFrom($this->priority);
+    }
+
     public function setPriority(string $priority): static
     {
         $this->priority = $priority;
-
         return $this;
     }
 
